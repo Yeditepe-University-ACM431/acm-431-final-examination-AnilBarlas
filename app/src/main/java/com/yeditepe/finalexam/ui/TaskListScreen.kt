@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.yeditepe.finalexam.model.Task
+import com.yeditepe.finalexam.navigation.AppNavGraph
 import com.yeditepe.finalexam.viewmodel.TaskViewModel
 
 @Composable
@@ -22,7 +23,7 @@ fun TaskListScreen(viewModel: TaskViewModel = viewModel()) {
         // Use a simple Column or LazyColumn
         taskList.forEach { task ->
             Column {
-                Text(text = task.title)
+                TaskRow(task=task, navController= AppNavGraph.navController)
             }
         }
     }

@@ -16,7 +16,7 @@ class TaskViewModel : ViewModel() {
 
     fun toggleTask(taskId: Int) {
         // TODO 2: Update isCompleted for the given task
-        var task = taskList.find { it.id == taskId }
+        val task = taskList.find { it.id == taskId }
         task?.isCompleted =!task.isCompleted
     }
 }
